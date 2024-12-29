@@ -142,6 +142,6 @@ def ler_css(file):
 
 def build_page_me():
     perfil() 
-    ler_css("style\\formulario.css")
+    ler_css("style/formulario.css")
 
 build_page_me()
