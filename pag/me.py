@@ -33,6 +33,14 @@ def perfil():
                    - Criação de Agentes de AI para resolução de Problemas.
                    - Modelagem de Banco de Dados.
                    ''')
+            with st.expander("Certificados"):
+                 st.write('''
+                            - AWS Academy Graduate - AWS Academy Cloud Foundations.
+                            - AWS Academy Graduate - AWS Academy Machine Learning Foundations.
+                            - AWS Academy Graduate - AWS Academy Cloud Web Application Builder.
+                            - Programa Ganhe o Mundo(Idioma Inglês) - Nível Básico 1 e 2.
+                            - Programa Ganhe o Mundo(Idioma Inglês) - Nível Pré-Intermediário e Intermediário.
+                            ''')
             button = st.button(":e-mail: Entre em Contato")
             
 
