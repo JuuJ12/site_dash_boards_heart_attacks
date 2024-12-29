@@ -7,3 +7,4 @@ matplotlib
 matplotlib-inline
 seaborn
 numpy
+scikit-learn

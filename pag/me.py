@@ -20,7 +20,7 @@ def perfil():
     col1,col2=st.columns([0.4,0.6], gap='small',vertical_alignment='center')
 
     with col1:
-        st.image('pictures\perfil_foto.png', caption='Julio Vitor dos Santos')
+        st.image('pictures/perfil_foto.png', caption='Julio Vitor dos Santos')
     with col2:
             st.write('''- Técnico em Análise de Desenvolvimento de Sistemas.''')
             st.write('''- Cursando Bacharelado em Sistemas de Informação.''')
