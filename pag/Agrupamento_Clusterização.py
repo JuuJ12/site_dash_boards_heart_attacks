@@ -25,11 +25,11 @@ def analise_clusters():
         st.write('Através do método do cotovelo e silhueta foi definido que o melhor número de clusters é 4.')
         col1,col2= st.columns(2)
         with col1:
-            st.image('data/cotovelo_kmodes.png', caption='Cotovelo do KModes',use_column_width=True)
-            st.image('data/silhouette_score_kmodes.png', caption='Silhouette Score KModes',use_column_width=True)
+            st.image('data/cotovelo_kmodes.png', caption='Cotovelo do KModes')
+            st.image('data/silhouette_score_kmodes.png', caption='Silhouette Score KModes')
         with col2:
-            st.image('data/cotovelo_kmeans.png', caption='Cotovelo do KMeans',use_column_width=True)
-            st.image('data/silhouette_score_kmeans.png', caption='Silhouette Score KMeans',use_column_width=True)
+            st.image('data/cotovelo_kmeans.png', caption='Cotovelo do KMeans')
+            st.image('data/silhouette_score_kmeans.png', caption='Silhouette Score KMeans')
 
     with st.expander('Analise dos Clusters (KModes)'):
         col1, col2 = st.columns([0.3, 0.7])

@@ -1,10 +1,27 @@
 import streamlit as st
+import streamlit.components.v1 as comp
+from streamlit_lottie import st_lottie
+import json
+import requests
 
 
+def load_lottiefile(filepath:str):
+    with open(filepath,"r") as f:
+        return json.load(f)
+
+def load_lottieurl(url:str):
+    r = requests.get(url)
+    if r.status_code !=200:
+        return None
+    return r.json
 
 st.title('Sobre Mim')
 def formulario():
-    st.title('Escreve Sua Mensagem:e-mail:')
+    col1,col2= st.columns([0.8,0.2], vertical_alignment='center')
+    with col1:
+        st.title('Escreva Sua Mensagem')
+    with col2:
+        comp.iframe("https://lottie.host/embed/0df7f51e-1a62-49e0-a831-e3606d1596c4/aNzoWwzTIq.lottie")
     formulario_de_contato = """
         <form action="https://formsubmit.co/juliovitortb99@gmail.com" method="POST">
         <input type="hidden" name="_captcha" value="false">
@@ -17,34 +34,71 @@ def formulario():
     st.markdown(formulario_de_contato, unsafe_allow_html=True)
     
 def perfil():
-    col1,col2=st.columns([0.4,0.6], gap='small',vertical_alignment='center')
+
+    animacao1= load_lottiefile('pictures/animacao_1.json')
+
+    col1,col2=st.columns([0.6,0.9], gap='small',vertical_alignment='center')
 
     with col1:
-        st.image('pictures/perfil_foto.png', caption='Julio Vitor dos Santos')
+
+        st_lottie(animacao1)
+
     with col2:
-            st.write('''- Técnico em Análise de Desenvolvimento de Sistemas.''')
-            st.write('''- Cursando Bacharelado em Sistemas de Informação.''')
-            with st.expander('Experiencias'):
-             st.write('''
+            st.write(''' 
+                        - Técnico em Análise e Desenvolvimento de Sistemas.
+                        - Cursando Bacharelado em Sistemas de Informação.
+                     
+                    ''')
+                
+
+    st.write("________________________________________________________________________")
+
+    st.title("Experiências")
+
+    col3,col4= st.columns([0.6,0.9], gap='small',vertical_alignment='center')
+    with col3:
+
+        animacao2= load_lottiefile('pictures/animacao_2.json')
+        st_lottie(animacao2)
+        
+    with col4:
+
+        st.write('''
                    - Análise e mineração de dados em bases diversas, como aquelas envolvendo filmes e séries, e dados médicos de pacientes com problemas cardíacos.
+                  _____________________________________________________________________
                    - Aplicação modelos de Machine Learning para recomendações de filmes e séries, bem como para a previsão de doenças cardíacas.
+                 _____________________________________________________________________
                    - Desenvolvimento de sistemas web utilizando o framework Streamlit, criando interfaces para operações CRUD.
+                 _____________________________________________________________________
                    - Desenvolvimento de sistemas web utilizando o framework Streamlit, criando interfaces gráficas interativas para visualização de dados.
+                 _____________________________________________________________________
                    - Criação de Agentes de AI para resolução de Problemas.
+                 _____________________________________________________________________
                    - Modelagem de Banco de Dados.
+                                                                          
                    ''')
-            with st.expander("Certificados"):
-                 st.write('''
+    st.write("________________________________________________________________________")    
+    col5,col6= st.columns([0.6,1], gap='small',vertical_alignment='center')    
+    with col5:
+        
+        st.title("Certificados")
+        animacao3= load_lottiefile('pictures/animacao_3.json')
+        st_lottie(animacao3)
+
+    with col6:
+         
+         st.write('''
                             - AWS Academy Graduate - AWS Academy Cloud Foundations.
+                            _____________________________________________________________________
                             - AWS Academy Graduate - AWS Academy Machine Learning Foundations.
+                            _____________________________________________________________________
                             - AWS Academy Graduate - AWS Academy Cloud Web Application Builder.
+                            _____________________________________________________________________
                             - Programa Ganhe o Mundo(Idioma Inglês) - Nível Básico 1 e 2.
+                            _____________________________________________________________________
                             - Programa Ganhe o Mundo(Idioma Inglês) - Nível Pré-Intermediário e Intermediário.
                             ''')
-            button = st.button(":e-mail: Entre em Contato")
-            
-
-
+    st.write("________________________________________________________________________") 
     retangulo_com_titulo = """
             <style>
                 .retangulo {
@@ -131,7 +185,7 @@ def perfil():
             <link href="https://cdn.jsdelivr.net/npm/devicon@2.14.0/devicon.min.css" rel="stylesheet">
         """, unsafe_allow_html=True)
 
-
+    button = st.button(":e-mail: Entre em Contato")
     if button:
         formulario()
 

@@ -8,3 +8,6 @@ matplotlib-inline
 seaborn
 numpy
 scikit-learn
+streamlit_lottie 
+json
+requests

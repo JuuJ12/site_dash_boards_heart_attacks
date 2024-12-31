@@ -1,7 +1,5 @@
 import streamlit as st
-# from pag.Análise_Exploratória import buildPage
-# from pag.Agrupamento_Clusterização import buildPage_clusterizacao
-# from pag.me import build_page_me
+
 
 
 st.set_page_config(
@@ -41,6 +39,9 @@ pagina= st.navigation({
         "Clusterização":[pag3]
     }
 )
+
+
+st.sidebar.text('Make By Julio Santos With Streamlit.')
 
 pagina.run()
 

@@ -17,6 +17,10 @@ st.title('Análise exploratória dos dados e Plotagens')
 custom_colors = ['#636efa', '#4e51d4', '#3936ae', '#211b8a', '#000068']
 selected_colors = [custom_colors[0], custom_colors[-2]]
 
+with st.expander('Sobre o Projeto'):
+      st.markdown('Sistema desenvolvido para Analise de Dados e Aplicação\
+                  de Modelos de Machine Learning Em uma Base de Dados Sobre\
+                   Pessoas com Doenças Cardíacas. A base de Dados foi retirada do Kaggle e pode ser encontrada [Aqui](https://www.kaggle.com/datasets/alexteboul/heart-disease-health-indicators-dataset).')
 def dataDict():
      st.subheader("Dicionário de Dados")
      with st.expander('Dicionario de dados'):
