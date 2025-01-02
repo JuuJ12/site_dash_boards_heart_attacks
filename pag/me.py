@@ -40,10 +40,11 @@ def perfil():
     col1,col2=st.columns([0.6,0.9], gap='small',vertical_alignment='center')
 
     with col1:
-
-        st_lottie(animacao1)
+        st.image('pictures/perfil_foto.png')
+        
 
     with col2:
+            st_lottie(animacao1)
             st.write(''' 
                         - Técnico em Análise e Desenvolvimento de Sistemas.
                         - Cursando Bacharelado em Sistemas de Informação.

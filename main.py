@@ -1,7 +1,6 @@
 import streamlit as st
 
 
-
 st.set_page_config(
     page_title='Sobre Mim',
     layout="centered",
@@ -9,6 +8,13 @@ st.set_page_config(
         'About' : '''teste'''
     }
        
+)
+
+st.sidebar.text('Make By Julio Santos With Streamlit.')
+st.sidebar.image(
+    'pictures/logo_png.png', 
+    
+    width=500  # Ajuste o tamanho conforme necessário
 )
 
 pag1 = st.Page(
@@ -41,7 +47,6 @@ pagina= st.navigation({
 )
 
 
-st.sidebar.text('Make By Julio Santos With Streamlit.')
 
 pagina.run()
 
